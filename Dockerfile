@@ -46,7 +46,4 @@ RUN git clone --depth=1 https://github.com/apple/swift-corelibs-xctest.git $SWIF
 RUN git clone --depth=1 https://github.com/apple/swift-corelibs-foundation.git $SWIFT_SOURCE_ROOT/swift-corelibs-foundation
 
 # Build Swift
-RUN $SWIFT_SOURCE_ROOT/swift/utils/build-script \
-	--preset=buildbot_linux_1404 \
-	installable_package=/tmp/swift.tar.gz \
-	install_destdir=/root/swift-$SWIFT_VERSION-$SWIFT_COMMIT-$SWIFT_PLATFORM.tar.gz
+RUN $SWIFT_SOURCE_ROOT/swift/utils/build-script -R
