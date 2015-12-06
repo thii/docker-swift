@@ -54,7 +54,9 @@ RUN git clone --depth=1 https://github.com/apple/swift-corelibs-foundation.git $
 RUN $SWIFT_SOURCE_ROOT/swift/utils/build-script -R
 
 # Update path
-RUN export PATH=/usr/bin/swift/Ninja-ReleaseAssert/swift-linux-x86_64/bin:$PATH
+ENV PATH /usr/bin/swift/Ninja-ReleaseAssert/swift-linux-x86_64/bin:$PATH
 
 # Print out current version
 CMD ["swift", "--version"]
+
+ENTRYPOINT ["swift"]
