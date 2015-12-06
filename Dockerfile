@@ -28,7 +28,7 @@ RUN update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-3.6 
 RUN rm -rf /var/lib/apt/lists/*
 
 ENV SWIFT_VERSION 2.2
-ENV SWIFT_COMMIT 5a57e5708c39c119829c98efd3bbcf317d1e0428
+ENV SWIFT_COMMIT 4489fa2699fe405e8bb35482b7c9f726d07cc4ac
 ENV SWIFT_PLATFORM ubuntu14.04
 ENV SWIFT_SOURCE_ROOT /usr/src/swift
 ENV SWIFT_BUILD_ROOT /usr/bin/swift
