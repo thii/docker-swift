@@ -5,21 +5,21 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update
 RUN apt-get -y upgrade
 RUN apt-get -y install \
-	git \
-	cmake \
-	ninja-build \
-	clang-3.6 \
-	uuid-dev \
-	libicu-dev \
-	icu-devtools \
-	libbsd-dev \
-	libedit-dev \
-	libxml2-dev \
-	libsqlite3-dev \
-	swig \
-	libpython-dev \
-	libncurses5-dev \
-	pkg-config
+    git \
+    cmake \
+    ninja-build \
+    clang-3.6 \
+    uuid-dev \
+    libicu-dev \
+    icu-devtools \
+    libbsd-dev \
+    libedit-dev \
+    libxml2-dev \
+    libsqlite3-dev \
+    swig \
+    libpython-dev \
+    libncurses5-dev \
+    pkg-config
 
 # Create a symlink for clang-3.6 (requires on Ubuntu 14.04 LTS as its default clang version is 3.4)
 RUN update-alternatives --install /usr/bin/clang clang /usr/bin/clang-3.6 100
