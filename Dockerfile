@@ -33,9 +33,14 @@ ENV SWIFT_PLATFORM ubuntu14.04
 ENV SWIFT_SOURCE_ROOT /usr/src/swift
 ENV SWIFT_BUILD_ROOT /usr/bin/swift
 
-# Clone Swift source
 RUN mkdir -p $SWIFT_SOURCE_ROOT
+
+# Clone Swift main repo and checkout specific commit
 RUN git clone --depth=2 https://github.com/apple/swift.git $SWIFT_SOURCE_ROOT/swift
+ && cd $SWIFT_SOURCE_ROOT/swift
+ && git checkout $SWIFT_COMMIT
+
+# Clone other sources
 RUN git clone --depth=1 https://github.com/apple/swift-llvm.git $SWIFT_SOURCE_ROOT/llvm
 RUN git clone --depth=1 https://github.com/apple/swift-clang.git $SWIFT_SOURCE_ROOT/clang
 RUN git clone --depth=1 https://github.com/apple/swift-lldb.git $SWIFT_SOURCE_ROOT/lldb
