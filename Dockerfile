@@ -36,8 +36,8 @@ ENV SWIFT_BUILD_ROOT /usr/bin/swift
 RUN mkdir -p $SWIFT_SOURCE_ROOT
 
 # Clone Swift main repo and checkout specific commit
-RUN git clone --depth=2 https://github.com/apple/swift.git $SWIFT_SOURCE_ROOT/swift
- && cd $SWIFT_SOURCE_ROOT/swift
+RUN git clone --depth=2 https://github.com/apple/swift.git $SWIFT_SOURCE_ROOT/swift \
+ && cd $SWIFT_SOURCE_ROOT/swift \
  && git checkout $SWIFT_COMMIT
 
 # Clone other sources
